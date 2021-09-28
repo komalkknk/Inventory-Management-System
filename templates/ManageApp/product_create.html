@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+{%extends 'ManageApp/base.html'%}
+{%block body_block%}
+    <h1>Product Information Insertion Form</h1><br>
+    <form method="post">
+        <table border="2">
+            {{form.as_p}}
+        </table>
+            {%csrf_token%}
+            <input type="submit" class="btn btn-md" style="width:12%;background-color:#555555;color: white;" value="Insert Record">
+    </form>
+{%endblock%}

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+{%extends 'ManageApp/base.html'%}
+{%block body_block%}
+    <h1>Product Information Update Form</h1><br>
+    <form method="post">
+            {%csrf_token%}
+            Movement ID:<input type="text" name="movement_id" value="{{product_movement.movement_id}}"><br><br>
+            From Location:<input type="text" name="from_location" value="{{product_movement.from_location}}"><br><br>
+            To Location:<input type="text" name="to_location" value="{{product_movement.to_location}}"><br><br>
+            Product ID:<input type="text" name="product_id" value="{{product_movement.product_id}}"><br><br>
+            Quantity:<input type="text" name="qty" value="{{product_movement.qty}}"><br><br>
+            <input type="submit" class="btn btn-md" style="width:12%;background-color:#555555;color: white;" value="Update Record">
+    </form>
+{%endblock%}

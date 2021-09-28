@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+{%extends 'ManageApp/base.html'%}
+{%block body_block%}
+    <h1>Product Movement Information Dashboard</h1><br>
+    {%if product_movement%}
+    <table border="2">
+        <thead align="center">
+            <th style="padding:10px;">Movement ID</th>
+            <th style="padding:10px;">From Location</th>
+            <th style="padding:10px;">To Location</th>
+            <th style="padding:10px;">Product ID</th>
+            <th style="padding:10px;">Warehouse</th>
+            <th style="padding:10px;">Quantity</th>
+            <th style="padding:10px;">Product Operations
+            <a href="/productmovement_create" class="btn btn-md" role="button" style="background-color:#555555;color: white;">Add</a></th>
+        </thead>
+        {%for product in product_movement%}
+        <tr align="center">
+            <td>{{product.movement_id}}</td>
+            <td>{{product.from_location}}</td>
+            <td>{{product.to_location}}</td>
+            <td>{{product.product_id}}</td>
+            <td>{{product.warehouse}}</td>
+            <td>{{product.qty}}</td>
+            <td>
+                <a href="/productmovement_update/{{product.movement_id}}" role="button" class="btn btn-sm" style="width:32%;background-color:#555555;color: white;">Edit</a>
+                <a href="/productmovement_retrieve/{{product.movement_id}}" role="button" class="btn btn-sm" style="width:32%;background-color:#555555;color: white;">View</a>
+                <a href="/productmovement_delete/{{product.movement_id}}" role="button" class="btn btn-danger btn-sm" style="width:32%;">Delete</a>
+            </td>
+        </tr>
+        {%endfor%}
+    </table>
+    {%else%}
+    <p>No Product Found</p>
+    {%endif%}
+{%endblock%}

@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+{%extends 'ManageApp/base.html'%}
+{%block body_block%}
+    <h1>Product Information Update Form</h1><br>
+    <form method="post">
+            {%csrf_token%}
+            Product ID:<input type="text" name="product_id" value="{{products.product_id}}"><br><br>
+            Product Name:<input type="text" name="product" value="{{products.product}}"><br><br>
+            Warehouse Name:<input type="text" name="warehouse" value="{{products.warehouse}}"><br><br>
+            Product Quantity:<input type="text" name="qty" value="{{products.qty}}"><br><br>
+            <input type="submit" class="btn btn-md" style="width:12%;background-color:#555555;color: white;" value="Update Record">
+    </form>
+{%endblock%}

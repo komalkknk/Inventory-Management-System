@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+ <html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+              integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    </head>
+    <body>
+    <br><h1 align="center">My Inventory Manager</h1><br>
+            <table border="2" style="width:100%">
+                <thead align="center">
+                    <th><a href="/product_index" class="btn btn-lg" style="width:100%;background-color:#e7e7e7;color: black;">Products</a></th>
+                    <th><a href="/location_index" class="btn btn-lg" style="width:100%;background-color:#e7e7e7;color: black;">Locations</a></th>
+                    <th><a href="/productmovement_index"  class="btn btn-lg" style="width:100%;background-color:#e7e7e7;color: black;">Product Movement</a></th>
+                </thead>
+            </table><br><br>
+
+    <h1 align="center">Product Availability  Dashboard</h1><br>
+    {%if products%}
+    <table border="2" style="width:100%;background-color:#e7e7e7;color: black;">
+        <thead align="center">
+            <th style="padding:10px;">Product Name</th>
+            <th style="padding:10px;">Warehouse Name</th>
+            <th style="padding:10px;">Product Available Quantity</th>
+        </thead>
+        {%for product in products%}
+        <tr align="center">
+            <td>{{product.product}}</td>
+            <td>{{product.warehouse}}</td>
+            <td>{{product.qty}}</td>
+        </tr>
+        {%endfor%}
+    </table>
+    {%else%}
+    <p>No Product Found</p>
+    {%endif%}
+    </body>
+ </html>
+
+

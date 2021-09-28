@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+{%extends 'ManageApp/base.html'%}
+{%block body_block%}
+    <h1>Product Information Dashboard</h1><br>
+    {%if products%}
+    <table border="2">
+        <thead align="center">
+            <th style="padding:10px;">Product ID</th>
+            <th style="padding:10px;">Product Name</th>
+            <th style="padding:10px;">Warehouse Name</th>
+            <th style="padding:10px;">Product Quantity</th>
+            <th style="padding:10px;">Product Operations
+            <a href="/product_create" role="button" class="btn btn-md" style="background-color:#555555;color: white;">Add</a></th>
+        </thead>
+        {%for product in products%}
+        <tr align="center">
+            <td>{{product.product_id}}</td>
+            <td>{{product.product}}</td>
+            <td>{{product.warehouse}}</td>
+            <td>{{product.qty}}</td>
+            <td>
+                <a href="/product_update/{{product.product_id}}" role="button" class="btn btn-sm" style="width:32%;background-color:#555555;color: white;">Edit</a>
+                <a href="/product_retrieve/{{product.product_id}}" role="button" class="btn btn-sm" style="width:32%;background-color:#555555;color: white;">View</a>
+                <a href="/product_delete/{{product.product_id}}" role="button" class="btn btn-danger btn-sm" style="width:32%;">Delete</a>
+            </td>
+        </tr>
+        {%endfor%}
+    </table>
+    {%else%}
+    <p>No Product Found</p>
+    {%endif%}
+{%endblock%}

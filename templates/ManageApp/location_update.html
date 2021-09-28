@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+{%extends 'ManageApp/base.html'%}
+{%block body_block%}
+    <h1>Location Information Update Form</h1><br>
+    <form method="post">
+            {%csrf_token%}
+            Location ID:<input type="text" name="product_id" value="{{location.location_id}}"><br><br>
+            Location Name:<input type="text" name="product" value="{{location.location}}"><br><br>
+            <input type="submit" class="btn btn-md" style="width:12%;background-color:#555555;color: white;" value="Update Record">
+    </form>
+{%endblock%}
