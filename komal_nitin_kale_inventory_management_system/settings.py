@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 ALLOWED_HOSTS = []
 SECRET_KEY = '&j#j^whxpj)e1i=b(olcv+75341x8#w$lj5gz(=gsqu5kkt_t_'
 
-DEBUG=False
+DEBUG=True
 
 # Application definition
 
